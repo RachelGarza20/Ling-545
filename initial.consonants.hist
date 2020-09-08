@@ -1,0 +1,2 @@
+gsed 's/[^A-Za-z]\+/\n/g' < wiki.txt | gsed 's/[aeiou].*//g' | sort -r | uniq -c | sort -gr
+
