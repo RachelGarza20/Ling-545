@@ -1,0 +1,57 @@
+Multichar_Symbols
+  
+%<n%>                ! Noun
+
+LEXICON Root
+
+Noun ;
+
+LEXICON N-coche
+
+%<n%>:e SUBST ; 
+
+%<dim_ito%>:%>ito SUBST; !  "diminutivo" 
+
+LEXICON N-gato
+
+%<n%>:o SUBST ;
+
+%<dim_ito%>:%>ito SUBST; !  "diminutivo"
+
+LEXICON N-arroz
+
+%<n%>: SUBST ;
+
+%<dim_ito%>:%>ito SUBST; !  "diminutivo"  
+
+LEXICON SUBST
+
+%<pl_os%>:%>s #; ! "plural"
+%<si_o%>:%> #; ! "singular"
+
+LEXICON Noun
+
+taco%<n%>:tac N-gato ; ! "taco"
+chico%<n%>:chic N-gato ; ! "boy"
+lapiz%<n%>:lapiz N-arroz ; ! "pencil"
+arroz%<n%>:arroz N-arroz ; ! "rice"
+coche%<n%>:coch N-coche ; ! "car"
+hombre%<n%>:hombr N-coche ; ! "man"
+gato%<n%>:gat N-gato ; ! "cat"
+perro%<n%>:perr N-gato ; ! "dog"
+paso%<n%>:pas N-gato ; ! "step"
+vaso%<n%>:vas N-gato ; ! "glass"
+lobo%<n%>:lob N-gato ; ! "wolf"
+hijo%<n%>:hij N-gato ; ! "boy"
+puerto%<n%>:puert N-gato ; ! "port"
+piso%<n%>:pis N-gato ; ! "floor"
+nido%<n%>:nid N-gato ; ! "nest"
+libro%<n%>:libr N-gato ; ! "book"
+tono%<n%>:ton N-gato ; ! "tone"
+mono%<n%>:mon N-gato ; ! "monkey"
+vestido%<n%>:vestid N-gato ; ! "dress"
+voto%<n%>:vot N-gato ; ! "vote"
+viento%<n%>:vient N-gato ; ! "wind"
+manzano%<n%>:manzan N-gato ; ! "apple tree"
+zapato%<n%>:zapat N-gato ; ! "shoe"
+naranjo%<n%>:naranj N-gato ; ! "orange tree"
