@@ -1,0 +1,36 @@
+DELIMITERS = "." ;
+
+LIST DET = DET ;
+LIST PUNCT = PUNCT ;
+
+SECTION
+
+REMOVE DET IF (1C PUNCT) ;
+
+LIST DET = DET ;
+LIST VERB = VERB ;
+LIST PRON = PRON ;
+LIST Gen = Case=Gen ;
+LIST Acc = Case=Acc ;
+LIST ADP = ADP ;
+LIST NOUN = NOUN ;
+
+SECTION
+
+#This rule references the choice between PRON and DET. Generally determiners should come before nouns, so the choice should be removed directly before a verb.  
+REMOVE DET IF (1 VERB) ;
+
+#This rule references the choice between NOUN + Nom and NOUN + Acc after an ADP, which happens twice in the text. Generally, an ADP occurs before accusative nouns and not before nominative nouns. This rule also ommits PRON choices for the word "TOM".
+SELECT NOUN + Acc IF (-1 ADP) ;
+
+LIST ADP = ADP ;
+LIST NOUN = NOUN ;
+
+#This rule references the choice between ADP and NOUN for the word "B" in the text. This occurs twice, both before another NOUN. So, I tell the system to choose ADP before nouns. 
+SELECT ADP IF (1 NOUN) ;
+
+LIST CCONJ = CCONJ ;
+LIST ADV = ADV ;
+
+#This occurs with "и" toward the end of the text. I tell the system to choose CCONJ before the ADV, because the ADV is coming before a verb. In other words, if there are two verbs back-to-back, the selection is likely a coordinating conjunction to separate the two verbs.
+SELECT CCONJ IF (1 ADV) ;
