@@ -1,0 +1,55 @@
+# sent_id = 1
+# text = Sugar daddy: this is el aquel personaje que te paga el apartamento, te compre el carro, te lleva de viaje.
+1       Sugar   _       ADJ     _       _       _       _       _       Lang=eng
+2       daddy   _       NOUN    _       _       _       _       _       Lang=eng
+3       :       _       PUNCT   _       _       _       _       _       _
+4       this    _       PRON    _       _       _       _       _       Lang=eng
+5       is      _       VERB    _       _       _       _       _       Lang=eng
+6       el      _       DET     _       _       _       _       _       Lang=spa
+7       aquel   _       ADJ     _       _       _       _       _       Lang=spa
+8       personaje       _       NOUN    _       _       _       _       _       Lang=spa
+9       que     _       SCONJ   _       _       _       _       _       Lang=spa
+10      te      _       PRON    _       _       _       _       _       Lang=spa
+11      paga    _       VERB    _       _       _       _       _       Lang=spa
+12      el      _       DET     _       _       _       _       _       Lang=spa
+13      apartamento     _       NOUN    _       _       _       _       _       Lang=spa
+14      ,       _       PUNCT   _       _       _       _       _       _
+15      te      _       PRON    _       _       _       _       _       Lang=spa
+16      compre  _       VERB    _       _       _       _       _       Lang=spa
+17      el      _       DET     _       _       _       _       _       Lang=spa
+18      carro   _       NOUN    _       _       _       _       _       Lang=spa
+19      ,       _       PUNCT   _       _       _       _       _       _
+20      te      _       PRON    _       _       _       _       _       Lang=spa
+21      lleva   _       VERB    _       _       _       _       _       Lang=spa
+22      de      _       PREP    _       _       _       _       _       Lang=spa
+23      viaje   _       NOUN    _       _       _       _       _       Lang=spa
+24      .       _       PUNCT   _       _       _       _       _       _
+
+# sent_id = 65
+# text = Them moms be like Dorás con su hammer y todo.
+1       Them    _       DET     _       _       _       _       _       Lang=eng
+2       moms    _       NOUN    _       _       _       _       _       Lang=eng
+3       be      _       AUX     _       _       _       _       _       Lang=eng
+4       like    _       ADV     _       _       _       _       _       Lang=eng
+5       Dorás   _       NOUN    _       _       _       _       _       Lang=spa
+6       con     _       PREP    _       _       _       _       _       Lang=spa
+7       su      _       DET     _       _       _       _       _       Lang=spa
+8       hammer  _       NOUN    _       _       _       _       _       Lang=eng
+9       y       _       CCONJ   _       _       _       _       _       Lang=spa
+10      todo    _       PRON    _       _       _       _       _       Lang=spa
+11      .       _       PUNCT   _       _       _       _       _       _
+
+# sent_id = 102
+# text = Wassup little brother, I got your present.
+1-3     Wassup  _       _       _       _       _       _       _       Lang=eng
+1       Was     _       PRON    _       _       _       _       _       Lang=eng
+2       s       _       VERB    _       _       _       _       _       Lang=eng
+3       up      _       PREP    _       _       _       _       _       Lang=eng
+4       little  _       ADJ     _       _       _       _       _       Lang=eng
+5       brother _       NOUN    _       _       _       _       _       Lang=eng
+6       ,       _       PUNCT   _       _       _       _       _       _
+7       I       _       PRON    _       _       _       _       _       Lang=eng
+8       got     _       VERB    _       _       _       _       _       Lang=eng
+9       your    _       DET     _       _       _       _       _       Lang=eng
+10      present _       NOUN    _       _       _       _       _       Lang=eng
+11      .       _       PUNCT   _       _       _       _       _       _
