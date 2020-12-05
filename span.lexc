@@ -6,6 +6,10 @@ LEXICON Root
 
 Noun ;
 
+LEXICON N-eng
+
+%<n%>: SUBST ;
+
 LEXICON N-coche
 
 %<n%>:e SUBST ; 
@@ -31,6 +35,9 @@ LEXICON SUBST
 
 LEXICON Noun
 
+club%<n%>:club N-eng ; ! "club"
+tuit%<n%>:tuit N-eng ; ! "Tweet"
+clic%<n%>:clic N-eng ; ! "click"
 taco%<n%>:tac N-gato ; ! "taco"
 chico%<n%>:chic N-gato ; ! "boy"
 lapiz%<n%>:lapiz N-arroz ; ! "pencil"
