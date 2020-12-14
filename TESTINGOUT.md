@@ -63,7 +63,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 #### This sentence does not contain a verb due to an incorrect labelling of *cuenta* as a noun. Here, this should be a verb. Because of that, it should not be considered as an appos to *Caudete*, but rather a root. It should also be given the head ID number of 0, instead of *desarrollo*.
 
 ![image of first error]
-(firsterror.png)
+(/Users/rachelsangster/firsterror.png)
 
 ## **2nd error - sent_id = es-dev-003-s417**
 ### *Su actuación recibió buenas reseñas, al igual que el filme.*
