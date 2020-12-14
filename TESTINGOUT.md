@@ -4,16 +4,17 @@
 ### **Command**
 #### I used the following commands to train, parse, and inspect my model. 
 
-
+```
 ./udpipe/src/udpipe --tokenizer none --tagger none --train es.udpipe < UD_Spanish-GSD/es_gsd-ud-train.conllu
 
 udpipe --parse es.udpipe < UD_Spanish-GSD/es_gsd-ud-test.conllu > TESTINGOUT.conllu
 
 python3 conll17_ud_eval.py --verbose UD_Spanish-GSD/es_gsd-ud-test.conllu TESTINGOUT.conllu
+```
 
+### **Results of Conllu Evaluation**
 
-### *Results of Conllu Evaluation*
-
+```
 Metrics    | Precision |    Recall |  F1 Score | AligndAcc
 -----------+-----------+-----------+-----------+-----------
 Tokens     |    100.00 |    100.00 |    100.00 |
@@ -26,13 +27,14 @@ AllTags    |    100.00 |    100.00 |    100.00 |    100.00
 Lemmas     |    100.00 |    100.00 |    100.00 |    100.00
 UAS        |     85.67 |     85.67 |     85.67 |     85.67
 LAS        |     82.38 |     82.38 |     82.38 |     82.38
-
+```
 
 
 
 ## **1st Error - sent_id = es-dev-003-s421**
 ### *Caudete, con gran desarrollo industrial, cuenta con empresas importantes del sector del vidrio o los transportes.*
 
+```
 1       Caudete caudete PROPN   _       _       5       nsubj   _       SpaceAfter=No
 2       ,       ,       PUNCT   _       _       5       punct   _       _
 3       con     con     ADP     _       _       5       case    _       _
@@ -56,6 +58,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 19      los     el      DET     _       Definite=Def|Gender=Masc|Number=Plur|PronType=Art       20      det     _       _
 20      transportes     transporte      NOUN    _       Gender=Masc|Number=Plur 14      conj    _       SpaceAfter=No
 21      .       .       PUNCT   _       _       5       punct   _       _
+```
 
 #### This sentence does not contain a verb due to an incorrect labelling of *cuenta* as a noun. Here, this should be a verb. Because of that, it should not be considered as an appos to *Caudete*, but rather a root. It should also be given the head ID number of 0, instead of *desarrollo*.
 
@@ -68,6 +71,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## **2nd error - sent_id = es-dev-003-s417**
 ### *Su actuación recibió buenas reseñas, al igual que el filme.*
 
+```
 1       Su      su      DET     _       Number=Sing|Person=3|Poss=Yes|PronType=Prs      2       det     _       _
 2       actuación       actuación       NOUN    _       Gender=Fem|Number=Sing  3       nsubj   _       _
 3       recibió recibir VERB    _       Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin   0       root    _       _
@@ -82,7 +86,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 11      el      el      DET     _       Definite=Def|Gender=Masc|Number=Sing|PronType=Art       12      det     _       _
 12      filme   filme   NOUN    _       Gender=Masc|Number=Sing 3       nmod    _       SpaceAfter=No
 13      .       .       PUNCT   _       _       3       punct   _       _
-
+```
 
 #### In this sentence, the wrong noun is attributed to the verb *recibio*. The principal noun of the phrase should *actuacion*. Instead, the dependency tree has labeled the noun *filme* as the main noun. 
 
@@ -95,6 +99,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## **3rd error - sent_id = es-dev-003-s425**
 ### *Su ciudad capital es la ciudad de Dodoma, que es la capital del país.*
 
+```
 1       Su      su      DET     _       Number=Sing|Person=3|Poss=Yes|PronType=Prs      2       det     _       _
 2       ciudad  ciudad  NOUN    _       Gender=Fem|Number=Sing  6       nsubj   _       _
 3       capital capital NOUN    _       Number=Sing     2       appos   _       _
@@ -113,6 +118,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 15      el      el      DET     _       Definite=Def|Gender=Masc|Number=Sing|PronType=Art       16      det     _       _
 16      país    país    NOUN    _       Gender=Masc|Number=Sing 13      nmod    _       SpaceAfter=No
 17      .       .       PUNCT   _       _       6       punct   _       _
+```
 
 #### In this sentence, capital is listed as a noun and later tagged as an appositional modifier to the noun, *ciudad*. Grammatically, however, the word *capital* can exist as a noun (as it does in the second phrase of this sentence) or as an adjective. I believe this should have been tagged as amod for adjectival modifier in this case.
 
@@ -125,6 +131,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## **4th error - sent_id = es-dev-003-s435**
 ### *La densidad de población era de 41,76 hab. / km².*
 
+```
 1       La      el      DET     _       Definite=Def|Gender=Fem|Number=Sing|PronType=Art        2       det     _       _
 2       densidad        densidad        NOUN    _       Gender=Fem|Number=Sing  5       nsubj   _       _
 3       de      de      ADP     _       _       4       case    _       _
@@ -138,6 +145,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 11      km      km      SYM     _       _       8       dep     _       SpaceAfter=No
 12      ²       ²       SYM     _       _       11      dep     _       SpaceAfter=No
 13      .       .       PUNCT   _       _       5       punct   _       _
+```
 
 #### In this sentence, there was a limitation in the parser in that it did not know how to tag km², and tagged dep by default. 
 
@@ -150,6 +158,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## **5th error - sent_id = es-dev-003-s449**
 ### *Además se acuso a las burocracias medicas y el gobierno de encubrimiento.*
 
+```
 1       Además  además  ADV     _       _       3       advmod  _       _
 2       se      él      PRON    _       Case=Acc,Dat|Person=3|PrepCase=Npr|PronType=Prs|Reflex=Yes      3       iobj    _       _
 3       acuso   aconer  VERB    _       Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin   0       root    _       _
@@ -163,6 +172,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 11      de      de      ADP     _       _       12      case    _       _
 12      encubrimiento   encubrimiento   NOUN    _       Gender=Masc|Number=Sing 10      nmod    _       SpaceAfter=No
 13      .       .       PUNCT   _       _       3       punct   _       _
+```
 
 #### The dependency taggers here are off in that *gobierno* is labeled as a conjunct of *acuso*, but *burocracias* is not labeled as a conjunct along with *gobierno*. 
 
@@ -175,6 +185,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## **6th error - sent_id = es-dev-003-s468**
 ### *Esta ciudad producía uranio enriquecido para el programa nuclear soviético.*
 
+```
 1       Esta    este    DET     _       Gender=Fem|Number=Sing|PronType=Dem     2       det     _       _
 2       ciudad  ciudad  NOUN    _       Gender=Fem|Number=Sing  3       nsubj   _       _
 3       producía        producir        VERB    _       Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin    0       root    _       _
@@ -186,6 +197,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 9       nuclear nuclear ADJ     _       Number=Sing     8       amod    _       _
 10      soviético       soviético       ADJ     _       Gender=Masc|Number=Sing 8       amod    _       SpaceAfter=No
 11      .       .       PUNCT   _       _       3       punct   _       _
+```
 
 #### In this sentence, *enriequecido* is mislabeled as a verb instead of an adjective. Because of this, its tagged as being an acl, or a clausal modifier of a noun. Instead, it should be tagged as an adjective to *uranio*, and thus an amod (an adjectival modifier) of *uranio*. 
  
@@ -198,6 +210,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## **7th error - sent_id = es-dev-004-s2** 
 ### *Es un queso de pasta no cocida, prensada o no.*
 
+```
 1       Es      ser     AUX     _       Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   3       cop     _       _
 2       un      uno     DET     _       Definite=Ind|Gender=Masc|Number=Sing|PronType=Art       3       det     _       _
 3       queso   queso   NOUN    _       Gender=Masc|Number=Sing 0       root    _       _
@@ -210,6 +223,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 10      o       o       CCONJ   _       _       11      cc      _       _
 11      no      no      ADV     _       _       3       conj    _       SpaceAfter=No
 12      .       .       PUNCT   _       _       3       punct   _       _
+```
 
 #### *Es* in this sentence is considered to be an auxiliary verb. Thus, *queso* is indicated as having a head ID of 0. Given that *Es* is not appearing imediately before a participle, this should be labeled as verb and have a head ID of 0 instead of *queso*. This would change the structure of the depenency tree. 
 
@@ -222,6 +236,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## **8th error - sent_id = es-dev-004-s4**
 ### *Del total de la población el 1.22 % eran hispanos o latinos de cualquier raza.*
 
+```
 1       Del     del     ADP     _       _       2       case    _       _
 2       total   total   NOUN    _       Gender=Masc|Number=Sing 10      nmod    _       _
 3       de      de      ADP     _       _       5       case    _       _
@@ -238,6 +253,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 14      cualquier       cualquiera      DET     _       Number=Sing|PronType=Ind        15      det     _       _
 15      raza    raza    NOUN    _       Gender=Fem|Number=Sing  10      nmod    _       SpaceAfter=No
 16      .       .       PUNCT   _       _       10      punct   _       _
+```
 
 #### Similar to the previous error, I also believe that the use of *ser* as *eran* in this sentence was mislabeled as an auxiliary verb. Because of this, the noun following it, *hispanos* was given the head ID of 0 and labeled as the root. This seems odd, as even if *eran* were an auxiiary verb here, *poblacion* should be the root, not hispanos. So the dependency relations are a bit off in this sentence.
 
@@ -250,6 +266,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## **9th error - sent_id = es-dev-004-s17**
 ### *La película consiste en once historias cortas que parten de tomar café y fumar cigarrillos como argumento en común.*
 
+```
 1       La      el      DET     _       Definite=Def|Gender=Fem|Number=Sing|PronType=Art        2       det     _       _
 2       película        película        NOUN    _       Gender=Fem|Number=Sing  3       nsubj   _       _
 3       consiste        consistir       VERB    _       Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   0       root    _       _
@@ -270,6 +287,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 18      en      en      ADP     _       _       19      case    _       _
 19      común   común   ADJ     _       Gender=Masc|Number=Sing 3       amod    _       SpaceAfter=No
 20      .       .       PUNCT   _       _       3       punct   _       _
+```
 
 #### The levels of dependency in this tree in general seem to be off. Several are described as their relation to the main verb, *consiste*, insted of their relation to sub-levels of dependency. For example, *comun* is labeled as an adjectival modifier of *consiste* instead of the noun *argumento*.
 
@@ -282,6 +300,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ## *10th error - sent_id = es-dev-004-s64**
 ### *Lo que tenéis que hacer es pagar a la gente y no engañar tanto.*
 
+```
 1       Lo      él      PRON    _       Case=Acc|Gender=Masc|Number=Sing|Person=3|PrepCase=Npr|PronType=Prs     7       nsubj   _       _
 2       que     que     SCONJ   _       _       5       mark    _       _
 3       tenéis  tener   AUX     _       Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   5       aux     _       _
@@ -297,6 +316,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 13      engañar engañar VERB    _       VerbForm=Inf    7       conj    _       _
 14      tanto   tanto   PRON    _       NumType=Card|PronType=Dem       13      obj     _       SpaceAfter=No
 15      .       .       PUNCT   _       _       7       punct   _       _
+```
 
 #### In this sentence, *pagar* is considered the root, labeled with a head ID of 0. It seems that this is incorrect, considering that *pagar* and *enganar* should be conjuncts of one another, and clausal complements of the verb *hacer*, which should be the root of this sentence.
 
