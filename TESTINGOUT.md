@@ -62,8 +62,8 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 
 #### This sentence does not contain a verb due to an incorrect labelling of *cuenta* as a noun. Here, this should be a verb. Because of that, it should not be considered as an appos to *Caudete*, but rather a root. It should also be given the head ID number of 0, instead of *desarrollo*.
 
-![image of first error]
-(/Users/rachelsangster/firsterror.png)
+
+
 
 ## **2nd error - sent_id = es-dev-003-s417**
 ### *Su actuación recibió buenas reseñas, al igual que el filme.*
@@ -86,9 +86,6 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ```
 
 #### In this sentence, the wrong noun is attributed to the verb *recibio*. The principal noun of the phrase should  be *actuacion*. Instead, the dependency tree has labeled the noun *filme* as the main noun. 
-
-![image of second error]
-(/images/seconderror.png)
 
 
 
@@ -119,8 +116,6 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 
 #### In this sentence, capital is listed as a noun and later tagged as an appositional modifier to the noun, *ciudad*. Grammatically, however, the word *capital* can exist as a noun (as it does in the second phrase of this sentence) or as an adjective. I believe this should have been tagged as amod for adjectival modifier in this case.
 
-![Image of third error]
-(/images/thirderror.png)
 
 
 
@@ -146,8 +141,6 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 
 #### In this sentence, there was a limitation in the parser in that it did not know how to tag km², and tagged dep by default. 
 
-![Image of fourth error]
-(/images/fourtherror.png)
 
 
 
@@ -173,8 +166,6 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 
 #### The dependency taggers here are off in that *gobierno* is labeled as a conjunct of *acuso*, but *burocracias* is not labeled as a conjunct along with *gobierno*. 
 
-![image of fifth error]
-(/images/fiftherror.png)
 
 
 
@@ -196,10 +187,7 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 11      .       .       PUNCT   _       _       3       punct   _       _
 ```
 
-#### In this sentence, *enriequecido* is mislabeled as a verb instead of an adjective. Because of this, its tagged as being an acl, or a clausal modifier of a noun. Instead, it should be tagged as an adjective to *uranio*, and thus an amod (an adjectival modifier) of *uranio*. 
- 
-![Image of sixth error]
-(/images/sixtherror.png)
+#### In this sentence, *enriquecido* is mislabeled as a verb instead of an adjective. Because of this, it's tagged as being an acl, or a clausal modifier of a noun. Instead, it should be tagged as an adjective to *uranio*, and thus an amod (an adjectival modifier) of *uranio*. 
 
 
 
@@ -223,9 +211,6 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ```
 
 #### *Es* in this sentence is considered to be an auxiliary verb. Thus, *queso* is indicated as having a head ID of 0. Given that *Es* is not appearing imediately before a participle, this should be labeled as verb and have a head ID of 0 instead of *queso*. This would change the structure of the depenency tree. 
-
-![Image of seventh error]
-(/images/seventherror.png)
 
 
 
@@ -253,9 +238,6 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ```
 
 #### Similar to the previous error, I also believe that the use of *ser* as *eran* in this sentence was mislabeled as an auxiliary verb. Because of this, the noun following it, *hispanos* was given the head ID of 0 and labeled as the root. This seems odd, as even if *eran* were an auxiiary verb here, *poblacion* should be the root, not hispanos. So the dependency relations are a bit off in this sentence.
-
-![Image of eighth error]
-(/images/eightherror.png)
 
 
 
@@ -288,9 +270,6 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 
 #### The levels of dependency in this tree in general seem to be off. Several are described as their relation to the main verb, *consiste*, insted of their relation to sub-levels of dependency. For example, *comun* is labeled as an adjectival modifier of *consiste* instead of the noun *argumento*.
 
-![Image of ninth error]
-(/images/nintherror.png)
-
 
 
 
@@ -316,11 +295,4 @@ LAS        |     82.38 |     82.38 |     82.38 |     82.38
 ```
 
 #### In this sentence, *pagar* is considered the root, labeled with a head ID of 0. It seems that this is incorrect, considering that *pagar* and *enganar* should be conjuncts of one another, and clausal complements of the verb *hacer*, which should be the root of this sentence.
-
-![Image of tenth error]
-(/images/tentherror.png)
-
-
-
-
 
