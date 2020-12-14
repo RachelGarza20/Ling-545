@@ -1,8 +1,8 @@
-`#`**Dependency Practical - 04**
+# **Dependency Practical - 04**
 
-`##`**Results**
-`###`**Command**
-`####` I used the following commands to train, parse, and inspect my model. 
+## **Results**
+### **Command**
+#### I used the following commands to train, parse, and inspect my model. 
 
 ```./udpipe/src/udpipe --tokenizer none --tagger none --train es.udpipe < UD_Spanish-GSD/es_gsd-ud-train.conllu
 
